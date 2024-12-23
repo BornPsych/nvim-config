@@ -140,8 +140,11 @@ local default_plugins = {
     config = function()
       require "plugins.configs.lspconfig"
     end,
+    opts = {
+      inlay_hints = { enabled = true },
+    },
   },
-
+  
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
@@ -245,8 +248,7 @@ local default_plugins = {
       end
     end,
   },
-
-  -- Only load whichkey after all the gui
+ -- Only load whichkey after all the gui
   {
     "folke/which-key.nvim",
     keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "g" },

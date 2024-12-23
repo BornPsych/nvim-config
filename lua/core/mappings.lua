@@ -241,6 +241,14 @@ M.lspconfig = {
       end,
       "List workspace folders",
     },
+
+    ["<leader>h"] = {
+      function()
+        local current_setting = vim.lsp.inlay_hint.is_enabled({})
+        vim.lsp.inlay_hint.enable(not current_setting, {})
+      end,
+      "LSP toggle inlay hints",
+    },
   },
 
   v = {
@@ -341,22 +349,7 @@ M.nvterm = {
       end,
       "Toggle vertical term",
     },
-
-    -- new
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "New horizontal term",
-    },
-
-    ["<leader>v"] = {
-      function()
-        require("nvterm.terminal").new "vertical"
-      end,
-      "New vertical term",
-    },
-  },
+  }
 }
 
 M.whichkey = {
